@@ -170,14 +170,6 @@ function App() {
               {
                 title: "Competition Fees",
                 icon: "🏆"
-              },
-              {
-                title: "Equipment Rental",
-                icon: "🤿"
-              },
-              {
-                title: "Underwater Photoshoot",
-                icon: "📸"
               }
             ].map((item, index) => (
               <div 
@@ -443,9 +435,7 @@ function App() {
                 <div>✓ Accommodation</div>
                 <div>✓ Training Sessions</div>
                 <div>✓ Competition Entry</div>
-                <div>✓ Equipment Rental</div>
                 <div>✓ All Activities</div>
-                <div>✓ All Events</div>
               </div>
             </div>
 
