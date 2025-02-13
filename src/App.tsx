@@ -102,7 +102,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <header id="hero" className="min-h-screen bg-white py-20">
+      <header id="hero" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-950 leading-tight mb-6">
@@ -125,24 +125,24 @@ function App() {
               <img 
                 src={images.hero1} 
                 alt="Freediving experience in Dubai - Training session"
-                className="w-full h-[40vh] md:h-80 object-cover rounded-lg"
+                className="w-full aspect-[3/4] object-cover rounded-lg"
               />
               <img 
                 src={images.hero2} 
                 alt="Advanced freediving techniques - Deep diving practice"
-                className="w-full h-[25vh] md:h-48 object-cover rounded-lg"
+                className="w-full aspect-[4/3] object-cover rounded-lg"
               />
             </div>
             <div className="space-y-4 pt-8">
               <img 
                 src={images.hero3} 
                 alt="Professional freediving competition in Dubai"
-                className="w-full h-[25vh] md:h-48 object-cover rounded-lg"
+                className="w-full aspect-[4/3] object-cover rounded-lg"
               />
               <img 
                 src={images.hero4} 
                 alt="Underwater freediving training session"
-                className="w-full h-[40vh] md:h-80 object-cover rounded-lg"
+                className="w-full aspect-[3/4] object-cover rounded-lg"
               />
             </div>
           </div>
@@ -479,20 +479,32 @@ function App() {
 
       {/* Footer */}
       <footer id="contact" className="bg-blue-950 text-blue-200 py-6">
-        <div className="max-w-4xl mx-auto px-4 flex justify-between items-center">
-          <p className="text-sm">© 2025. All rights reserved.</p>
-          <a 
-            href="https://www.instagram.com/bux.freediver/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300 transition-colors"
-          >
-            <Instagram className="w-5 h-5" />
-            <span>@bux.freediver</span>
-          </a>
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm">© 2025. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <a 
+                href="https://www.instagram.com/bux.freediver/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>@bux.freediver</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/deepdivewithsmruti/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>@deepdivewithsmruti</span>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
-
     </div>
   );
 }
