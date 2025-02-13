@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Anchor, Calendar, Clock, Instagram, MapPin, Menu, Trophy, Users, Waves, X } from 'lucide-react';
+import { Anchor, Calendar, Clock, Instagram, MapPin, Menu, Phone, Trophy, Users, Waves, X } from 'lucide-react';
 
 const images = {
   hero1: 'https://i.imgur.com/c0GvcYj.jpeg',
@@ -106,16 +106,18 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-950 leading-tight mb-6">
-              Freediving retreat for India
+              Official Freediving Competition for Indian Athletes
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              An exclusive experience for Indian freedivers including training, guest lectures, official AIDA competition and a lot of fun! Only a 2 hour flight away in Dubai, UAE.
+              An exclusive experience for Indian freedivers to participate in an official AIDA competition! Only a 2 hour flight away in Dubai, UAE.
             </p>
             <a
-              href="YOUR-CALENDLY-LINK"
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 rounded-full transition-colors"
+              href="https://wa.me/917738846334?text=Im%20interested%20to%20compete%20in%20Dubai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 rounded-full transition-colors"
             >
-              <Calendar className="mr-2" /> Book a Call Now
+              <Phone className="mr-2" /> Book on WhatsApp
             </a>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -170,24 +172,12 @@ function App() {
                 icon: "🏆"
               },
               {
-                title: "Guest Lectures",
-                icon: "👥"
-              },
-              {
                 title: "Equipment Rental",
                 icon: "🤿"
               },
               {
-                title: "Night Snorkelling Trip",
-                icon: "🌙"
-              },
-              {
                 title: "Underwater Photoshoot",
                 icon: "📸"
-              },
-              {
-                title: "Yoga & Tai Chi Sessions",
-                icon: "🧘‍♂️"
               }
             ].map((item, index) => (
               <div 
@@ -206,236 +196,99 @@ function App() {
       <section id="itinerary" className="py-20 bg-blue-50">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center text-blue-900">Itinerary</h2>
+
           <div className="relative">
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-blue-200"></div>
             {[
               {
-                day: "Friday – Arrival in the UAE",
+                day: "Thursday – Arrival Night",
                 events: [
                   {
                     icon: "✈️",
-                    title: "Arrival & Transfer",
-                    time: "Evening",
-                    location: "Land in the UAE and transfer to your villa"
-                  },
-                  {
-                    icon: "🥂",
-                    title: "Welcome Reception",
-                    time: "Evening",
-                    location: "Light welcome drink/snack as you settle in"
-                  },
-                  {
-                    icon: "🏠",
-                    title: "Check-In & Relax",
+                    title: "Arrival in Dubai",
                     time: "Night",
-                    location: "Unwind from your travels"
+                    location: "Dubai International Airport"
+                  },
+                  {
+                    icon: "🚗",
+                    title: "Transfer to Accommodation",
+                    time: "Night",
+                    location: "Hotel/Villa check-in"
                   }
                 ]
               },
               {
-                day: "Saturday – Explore Dubai",
+                day: "Friday – Rest & Pool Training",
                 events: [
                   {
                     icon: "🍳",
-                    title: "Breakfast",
+                    title: "Breakfast & Briefing",
                     time: "Morning",
-                    location: "Start the day with a hearty meal"
+                    location: "Team breakfast and competition briefing"
                   },
-                  {
-                    icon: "🏛️",
-                    title: "Sightseeing Tour",
-                    time: "Morning",
-                    location: "Burj Khalifa, Dubai Mall, historic souks"
-                  },
-                  {
-                    icon: "🌅",
-                    title: "Local Exploration",
-                    time: "Afternoon",
-                    location: "Cultural excursions"
-                  },
-                  {
-                    icon: "🍽️",
-                    title: "Group Dinner",
-                    time: "Evening",
-                    location: "Local restaurant"
-                  }
-                ]
-              },
-              {
-                day: "Sunday – Dive Training & Night Snorkelling",
-                events: [
-                  {
-                    icon: "🏊‍♂️",
-                    title: "Dive Training Session",
-                    time: "Morning",
-                    location: "Technique, breath-hold, and safety fundamentals"
-                  },
-                  {
-                    icon: "🏖️",
-                    title: "Leisure Time",
-                    time: "Afternoon",
-                    location: "Beach, local cafes, or rest"
-                  },
-                  {
-                    icon: "🌙",
-                    title: "Night Snorkelling",
-                    time: "Evening",
-                    location: "Guided underwater nocturnal experience"
-                  }
-                ]
-              },
-              {
-                day: "Monday – Yoga, Learning & Pool Training",
-                events: [
                   {
                     icon: "🧘‍♀️",
-                    title: "Yoga Session",
-                    time: "Morning",
-                    location: "Breath control and flexibility focus"
-                  },
-                  {
-                    icon: "📚",
-                    title: "Guest Lecture",
-                    time: "Mid-Morning",
-                    location: "Freediving fundamentals"
-                  },
-                  {
-                    icon: "🏊‍♂️",
-                    title: "Pool Training",
-                    time: "Afternoon",
-                    location: "Guided pool session"
-                  }
-                ]
-              },
-              {
-                day: "Tuesday – Tai Chi & Advanced Training",
-                events: [
-                  {
-                    icon: "🥋",
-                    title: "Tai Chi Session",
-                    time: "Morning",
-                    location: "Body awareness and controlled movement"
-                  },
-                  {
-                    icon: "📖",
-                    title: "Advanced Lecture",
-                    time: "Mid-Morning",
-                    location: "Advanced techniques and physiology"
-                  },
-                  {
-                    icon: "🏊‍♂️",
-                    title: "Pool Training",
-                    time: "Afternoon",
-                    location: "Skill refinement"
-                  }
-                ]
-              },
-              {
-                day: "Wednesday – Rest & Deep Dive Dubai",
-                events: [
-                  {
-                    icon: "☀️",
-                    title: "Relaxed Morning",
-                    time: "Morning",
-                    location: "Breakfast and leisure"
-                  },
-                  {
-                    icon: "💆‍♂️",
                     title: "Rest Period",
-                    time: "Midday",
-                    location: "Spa services or pool time"
-                  },
-                  {
-                    icon: "🌊",
-                    title: "Deep Dive Session",
-                    time: "Afternoon",
-                    location: "Deep Dive Dubai"
-                  }
-                ]
-              },
-              {
-                day: "Thursday – Learning & Practice",
-                events: [
-                  {
-                    icon: "🧘‍♂️",
-                    title: "Light Exercise",
                     time: "Morning",
-                    location: "Stretching and meditation"
-                  },
-                  {
-                    icon: "🎓",
-                    title: "Technical Lecture",
-                    time: "Mid-Morning",
-                    location: "Advanced freediving techniques"
+                    location: "Recovery from travel"
                   },
                   {
                     icon: "🏊‍♂️",
-                    title: "Pool Session",
+                    title: "Pool Training Session",
                     time: "Afternoon",
-                    location: "Practical application"
-                  }
-                ]
-              },
-              {
-                day: "Friday – Recovery Day",
-                events: [
-                  {
-                    icon: "🧘‍♀️",
-                    title: "Meditation Session",
-                    time: "Midday",
-                    location: "Guided meditation"
+                    location: "Technique refinement and practice"
                   },
-                  {
-                    icon: "🧘‍♂️",
-                    title: "Yoga Session",
-                    time: "Afternoon",
-                    location: "Pre-competition preparation"
-                  }
-                ]
-              },
-              {
-                day: "Saturday – Depth Competition Day",
-                events: [
                   {
                     icon: "📋",
-                    title: "Pre-Competition Briefing",
-                    time: "Morning",
-                    location: "Safety and guidelines review"
-                  },
+                    title: "Competition Preparation",
+                    time: "Evening",
+                    location: "Equipment check and final briefing"
+                  }
+                ]
+              },
+              {
+                day: "Saturday – Pool Competition",
+                events: [
                   {
                     icon: "🏊‍♂️",
-                    title: "Depth Competition",
-                    time: "Daytime",
-                    location: "Supervised competition dives"
+                    title: "Pool Disciplines",
+                    time: "All Day",
+                    location: "Pool competition area",
+                    details: [
+                      "Static Apnea (STA)",
+                      "Dynamic Apnea (DYN)",
+                      "Dynamic No Fins (DNF)",
+                      "Dynamic Bi-Fins (DYNB)"
+                    ]
                   },
                   {
                     icon: "🏆",
-                    title: "Awards & Celebration",
+                    title: "Pool Disciplines Awards",
                     time: "Evening",
-                    location: "Ceremony and group dinner"
+                    location: "Pool venue"
                   }
                 ]
               },
               {
-                day: "Sunday – Yacht Party & Departure",
+                day: "Sunday – Depth Competition",
                 events: [
                   {
-                    icon: "🍳",
-                    title: "Final Breakfast",
-                    time: "Morning",
-                    location: "Group breakfast"
+                    icon: "🌊",
+                    title: "Depth Disciplines",
+                    time: "All Day",
+                    location: "Open water venue",
+                    details: [
+                      "Constant Weight No Fins (CNF)",
+                      "Constant Weight (CWT)",
+                      "Constant Weight Bi-Fins (CWTB)",
+                      "Free Immersion (FIM)"
+                    ]
                   },
                   {
-                    icon: "🛥️",
-                    title: "Yacht Party",
-                    time: "Daytime",
-                    location: "Dubai coastline celebration"
-                  },
-                  {
-                    icon: "✈️",
-                    title: "Airport Transfer",
-                    time: "Late Afternoon/Evening",
-                    location: "Departure arrangements"
+                    icon: "🏆",
+                    title: "Closing Ceremony & Awards",
+                    time: "Evening",
+                    location: "Celebration venue"
                   }
                 ]
               }
@@ -453,13 +306,30 @@ function App() {
                           <h4 className="font-medium text-blue-900">{event.title}</h4>
                           <span className="text-sm text-blue-600">{event.time}</span>
                         </div>
-                        <p className="text-sm text-gray-600">{event.location}</p>
+                        <p className="text-sm text-gray-600 mb-2">{event.location}</p>
+                        {event.details && (
+                          <div className="mt-2 border-t pt-2">
+                            <p className="text-sm text-gray-600 mb-1">Available Disciplines:</p>
+                            <ul className="grid grid-cols-2 gap-1">
+                              {event.details.map((detail, index) => (
+                                <li key={index} className="text-sm text-gray-700">• {detail}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Participation Disclaimer */}
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-8 rounded-r">
+            <p className="text-yellow-700">
+              <strong>Important Note:</strong> Each participant can only compete in a maximum of 2 disciplines per day to ensure optimal performance and safety.
+            </p>
           </div>
         </div>
       </section>
@@ -555,7 +425,7 @@ function App() {
           <div className="bg-gradient-to-br from-blue-50/90 to-blue-100/90 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-xl mx-auto">
             <div className="mb-4">
               <p className="text-gray-600 mb-2">Regular Price</p>
-              <span className="text-2xl font-bold text-gray-500 line-through decoration-red-500">₹2,99,999</span>
+              <span className="text-2xl font-bold text-gray-500 line-through decoration-red-500">₹1,00,000</span>
             </div>
             
             <div className="mb-4">
@@ -563,8 +433,8 @@ function App() {
                 Early Bird Offer
               </div>
               <p className="text-gray-600 text-sm mb-1">Book before March 2025</p>
-              <div className="text-4xl font-bold text-blue-900 mb-1">₹2,49,999</div>
-              <p className="text-green-600 text-sm font-semibold">Save ₹50,000</p>
+              <div className="text-4xl font-bold text-blue-900 mb-1">₹69,999</div>
+              <p className="text-green-600 text-sm font-semibold">Save ₹30,001</p>
             </div>
 
             <div className="text-gray-600 text-xs mb-6">
@@ -580,10 +450,12 @@ function App() {
             </div>
 
             <a
-              href="YOUR-CALENDLY-LINK"
-              className="inline-flex items-center px-6 py-3 text-base font-semibold bg-blue-600 text-white hover:bg-blue-700 rounded-full transition-colors"
+              href="https://wa.me/917738846334?text=Im%20interested%20to%20compete%20in%20Dubai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 text-base font-semibold bg-green-600 text-white hover:bg-green-700 rounded-full transition-colors"
             >
-              <Calendar className="mr-2 w-4 h-4" /> Book Your Spot Now
+              <Phone className="mr-2 w-4 h-4" /> Book on WhatsApp
             </a>
           </div>
         </div>
@@ -605,10 +477,12 @@ function App() {
             Secure your spot and join an elite group of Indian freedivers for an unforgettable underwater adventure!
           </p>
           <a
-            href="YOUR-CALENDLY-LINK"
-            className="inline-flex items-center px-8 py-4 text-lg font-semibold bg-blue-500 hover:bg-blue-600 rounded-full transition-colors"
+            href="https://wa.me/917738846334?text=Im%20interested%20to%20compete%20in%20Dubai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 text-lg font-semibold bg-green-600 hover:bg-green-700 rounded-full transition-colors"
           >
-            <Calendar className="mr-2" /> Book a Call Now
+            <Phone className="mr-2" /> Book on WhatsApp
           </a>
         </div>
       </section>
