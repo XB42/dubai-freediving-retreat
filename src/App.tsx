@@ -42,46 +42,23 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-blue-900">
       {/* Navbar */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-20">
-            <button 
-              onClick={() => scrollToSection('hero')}
-              className={`text-2xl font-bold ${isScrolled ? 'text-blue-900' : 'text-white'}`}
-            >
-              freediving.in
-            </button>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              {[
-                ['Schedule', 'itinerary'],
-                ['Host', 'about'],
-                ['Book Now', 'contact']
-              ].map(([label, id]) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className={`${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'} transition-colors`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden ${isScrolled ? 'text-blue-900' : 'text-white'}`}
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden bg-white absolute left-0 right-0 shadow-lg">
-              <div className="px-4 py-2 space-y-2">
+      <div className="fixed w-full z-50">
+        {/* Competition Banner */}
+        <div className="bg-red-600 text-white py-1.5 px-4 text-center text-sm font-semibold">
+          AIDA INDIA OPEN FREEDIVING COMPETITION: May 16, 17 2025
+        </div>
+        <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex justify-between items-center h-16">
+              <button 
+                onClick={() => scrollToSection('hero')}
+                className={`text-2xl font-bold ${isScrolled ? 'text-blue-900' : 'text-white'}`}
+              >
+                freediving.in
+              </button>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex space-x-8">
                 {[
                   ['Schedule', 'itinerary'],
                   ['Host', 'about'],
@@ -90,26 +67,55 @@ function App() {
                   <button
                     key={id}
                     onClick={() => scrollToSection(id)}
-                    className="block w-full text-left py-2 text-gray-600 hover:text-blue-600"
+                    className={`${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'} transition-colors`}
                   >
                     {label}
                   </button>
                 ))}
               </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`md:hidden ${isScrolled ? 'text-blue-900' : 'text-white'}`}
+              >
+                {isMenuOpen ? <X /> : <Menu />}
+              </button>
             </div>
-          )}
-        </div>
-      </nav>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+              <div className="md:hidden bg-white absolute left-0 right-0 shadow-lg">
+                <div className="px-4 py-2 space-y-2">
+                  {[
+                    ['Schedule', 'itinerary'],
+                    ['Host', 'about'],
+                    ['Book Now', 'contact']
+                  ].map(([label, id]) => (
+                    <button
+                      key={id}
+                      onClick={() => scrollToSection(id)}
+                      className="block w-full text-left py-2 text-gray-600 hover:text-blue-600"
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </nav>
+      </div>
 
       {/* Hero Section */}
       <header id="hero" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-950 leading-tight mb-6">
-              Official Freediving Competition for Indian Athletes
+              Compete in the first AIDA INDIA OPEN FREEDIVING COMPETITION
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              An exclusive experience for Indian freedivers to participate in an official AIDA competition! Only a 2 hour flight away in Dubai, UAE.
+              An exclusive experience for Indian freedivers to participate in an official AIDA competition! Only a 2 hour flight away in Dubai, UAE. On May 15-18 2025
             </p>
             <a
               href="https://wa.me/917738846334?text=Im%20interested%20to%20compete%20in%20Dubai"
@@ -193,7 +199,7 @@ function App() {
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-blue-200"></div>
             {[
               {
-                day: "Thursday – Arrival Night",
+                day: "Thursday, May 15 – Arrival",
                 events: [
                   {
                     icon: "✈️",
@@ -210,36 +216,7 @@ function App() {
                 ]
               },
               {
-                day: "Friday – Rest & Pool Training",
-                events: [
-                  {
-                    icon: "🍳",
-                    title: "Breakfast & Briefing",
-                    time: "Morning",
-                    location: "Team breakfast and competition briefing"
-                  },
-                  {
-                    icon: "🧘‍♀️",
-                    title: "Rest Period",
-                    time: "Morning",
-                    location: "Recovery from travel"
-                  },
-                  {
-                    icon: "🏊‍♂️",
-                    title: "Pool Training Session",
-                    time: "Afternoon",
-                    location: "Technique refinement and practice"
-                  },
-                  {
-                    icon: "📋",
-                    title: "Competition Preparation",
-                    time: "Evening",
-                    location: "Equipment check and final briefing"
-                  }
-                ]
-              },
-              {
-                day: "Saturday – Pool Competition",
+                day: "Friday, May 16 – Pool Competition",
                 events: [
                   {
                     icon: "🏊‍♂️",
@@ -257,18 +234,36 @@ function App() {
                     icon: "🏆",
                     title: "Pool Disciplines Awards",
                     time: "Evening",
-                    location: "Pool venue"
+                    location: (
+                      <a 
+                        href="http://www.hamdansc.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 underline"
+                      >
+                        Hamdan Sports Complex
+                      </a>
+                    )
                   }
                 ]
               },
               {
-                day: "Sunday – Depth Competition",
+                day: "Saturday, May 17 – Depth Competition",
                 events: [
                   {
                     icon: "🌊",
                     title: "Depth Disciplines",
                     time: "All Day",
-                    location: "Open water venue",
+                    location: (
+                      <a 
+                        href="https://deepdivedubai.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 underline"
+                      >
+                        Deep Dive Dubai
+                      </a>
+                    ),
                     details: [
                       "Constant Weight No Fins (CNF)",
                       "Constant Weight (CWT)",
@@ -278,9 +273,18 @@ function App() {
                   },
                   {
                     icon: "🏆",
-                    title: "Closing Ceremony & Awards",
+                    title: "Trophy and Medal Ceremony",
                     time: "Evening",
-                    location: "Celebration venue"
+                    location: (
+                      <a 
+                        href="https://deepdivedubai.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 underline"
+                      >
+                        Deep Dive Dubai
+                      </a>
+                    )
                   }
                 ]
               }
@@ -330,7 +334,7 @@ function App() {
       <section id="about" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center text-blue-900">Meet Your Guides</h2>
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-3 gap-12">
             {/* Bux Khurana */}
             <div className="flex flex-col">
               <div className="mb-6">
@@ -398,6 +402,40 @@ function App() {
                 </a>
               </div>
             </div>
+
+            {/* Shubham Pandey */}
+            <div className="flex flex-col">
+              <div className="mb-6">
+                <img
+                  src="https://i.imgur.com/35QtwOc.png"
+                  alt="Shubham Pandey - Competition Safety"
+                  className="rounded-lg shadow-xl object-cover aspect-[3/4] w-full"
+                />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 text-blue-700">Shubham Pandey</h3>
+                <p className="text-gray-700 mb-6">
+                  As the official Safety of the competition, Shubham brings extensive experience 
+                  and expertise to ensure all athletes perform at their best under the safest conditions. 
+                  His track record of training top Indian athletes speaks to his exceptional skills.
+                </p>
+                <ul className="space-y-2 text-gray-700 mb-4">
+                  <li>🛡️ Official Competition Safety</li>
+                  <li>📚 Certified Freediving Instructor</li>
+                  <li>🎓 Instructor to top Indian athletes</li>
+                  <li>🌏 International Competition Experience</li>
+                </ul>
+                <a 
+                  href="https://www.instagram.com/unobreath/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span>@unobreath</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -412,41 +450,90 @@ function App() {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-8 text-blue-900">Investment</h2>
-          <div className="bg-gradient-to-br from-blue-50/90 to-blue-100/90 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-xl mx-auto">
-            <div className="mb-4">
-              <p className="text-gray-600 mb-2">Regular Price</p>
-              <span className="text-2xl font-bold text-gray-500 line-through decoration-red-500">₹1,00,000</span>
-            </div>
-            
-            <div className="mb-4">
-              <div className="inline-block bg-blue-600 text-white px-3 py-0.5 rounded-full text-sm mb-2">
-                Early Bird Offer
+        <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl font-bold mb-12 text-blue-900">Investment</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* All-Inclusive Package */}
+            <div className="bg-gradient-to-br from-blue-50/90 to-blue-100/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-blue-900 mb-2">All-Inclusive Package</h3>
+                <div className="mb-4">
+                  <p className="text-gray-600 mb-2">Regular Price</p>
+                  <span className="text-2xl font-bold text-gray-500 line-through decoration-red-500">₹1,00,000</span>
+                </div>
+                
+                <div className="mb-4">
+                  <div className="inline-block bg-blue-600 text-white px-3 py-0.5 rounded-full text-sm mb-2">
+                    Early Bird Offer
+                  </div>
+                  <p className="text-gray-600 text-sm mb-1">Book before March 2025</p>
+                  <div className="text-4xl font-bold text-blue-900 mb-1">₹69,999</div>
+                  <p className="text-green-600 text-sm font-semibold">Save ₹30,001</p>
+                </div>
+
+                <div className="text-gray-600 text-sm mb-6">
+                  <p className="font-semibold mb-2">Includes:</p>
+                  <div className="space-y-1 text-left">
+                    <div>✓ Accommodation</div>
+                    <div>✓ All Meals</div>
+                    <div>✓ Training Sessions</div>
+                    <div>✓ Competition Entry</div>
+                    <div>✓ Visa Assistance</div>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 text-sm mb-1">Book before March 2025</p>
-              <div className="text-4xl font-bold text-blue-900 mb-1">₹69,999</div>
-              <p className="text-green-600 text-sm font-semibold">Save ₹30,001</p>
+
+              <a
+                href="https://wa.me/917738846334?text=Im%20interested%20in%20the%20all-inclusive%20package"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 text-base font-semibold bg-green-600 text-white hover:bg-green-700 rounded-full transition-colors"
+              >
+                <Phone className="mr-2 w-4 h-4" /> Book All-Inclusive
+              </a>
             </div>
 
-            <div className="text-gray-600 text-xs mb-6">
-              <p>All-inclusive package covering:</p>
-              <div className="mt-2 grid grid-cols-2 gap-1">
-                <div>✓ Accommodation</div>
-                <div>✓ Training Sessions</div>
-                <div>✓ Competition Entry</div>
-                <div>✓ All Activities</div>
-              </div>
-            </div>
+            {/* Competition Only Package */}
+            <div className="bg-gradient-to-br from-blue-50/90 to-blue-100/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Competition Only</h3>
+                <div className="mb-4">
+                  <p className="text-gray-600 mb-2">Regular Price</p>
+                  <span className="text-2xl font-bold text-gray-500 line-through decoration-red-500">₹60,000</span>
+                </div>
+                
+                <div className="mb-4">
+                  <div className="inline-block bg-blue-600 text-white px-3 py-0.5 rounded-full text-sm mb-2">
+                    Early Bird Offer
+                  </div>
+                  <p className="text-gray-600 text-sm mb-1">Book before March 2025</p>
+                  <div className="text-4xl font-bold text-blue-900 mb-1">₹45,999</div>
+                  <p className="text-green-600 text-sm font-semibold">Save ₹14,001</p>
+                </div>
 
-            <a
-              href="https://wa.me/917738846334?text=Im%20interested%20to%20compete%20in%20Dubai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 text-base font-semibold bg-green-600 text-white hover:bg-green-700 rounded-full transition-colors"
-            >
-              <Phone className="mr-2 w-4 h-4" /> Book on WhatsApp
-            </a>
+                <div className="text-gray-600 text-sm mb-6">
+                  <p className="font-semibold mb-2">Includes:</p>
+                  <div className="space-y-1 text-left">
+                    <div>✓ Competition Entry</div>
+                    <div>✓ AIDA UAE Membership</div>
+                    <div>✓ Competition Support</div>
+                    <div>✓ Visa Assistance</div>
+                    <div className="text-gray-400">✗ Accommodation</div>
+                    <div className="text-gray-400">✗ Meals</div>
+                    <div className="text-gray-400">✗ Training Sessions</div>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://wa.me/917738846334?text=Im%20interested%20in%20the%20competition-only%20package"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 text-base font-semibold bg-green-600 text-white hover:bg-green-700 rounded-full transition-colors"
+              >
+                <Phone className="mr-2 w-4 h-4" /> Book Competition Only
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -482,7 +569,7 @@ function App() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm">© 2025. All rights reserved.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <a 
                 href="https://www.instagram.com/bux.freediver/" 
                 target="_blank" 
@@ -500,6 +587,15 @@ function App() {
               >
                 <Instagram className="w-5 h-5" />
                 <span>@deepdivewithsmruti</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/unobreath/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-200 hover:text-blue-300 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>@unobreath</span>
               </a>
             </div>
           </div>
