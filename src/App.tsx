@@ -44,7 +44,7 @@ function App() {
       {/* Navbar */}
       <div className="fixed w-full z-50">
         {/* Competition Banner */}
-        <div className="bg-red-600 text-white py-1.5 px-4 text-center text-sm font-semibold">
+        <div className="bg-blue-600 text-white py-1.5 px-4 text-center text-sm font-semibold">
           AIDA INDIA OPEN FREEDIVING COMPETITION: May 16, 17 2025
         </div>
         <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
@@ -287,6 +287,17 @@ function App() {
                     )
                   }
                 ]
+              },
+              {
+                day: "Sunday, May 18 – Departure",
+                events: [
+                  {
+                    icon: "✈️",
+                    title: "Check-out & Departure",
+                    time: "Morning",
+                    location: "Dubai International Airport"
+                  }
+                ]
               }
             ].map((day, dayIndex) => (
               <div key={dayIndex} className="mb-12">
@@ -466,7 +477,7 @@ function App() {
                   <div className="inline-block bg-blue-600 text-white px-3 py-0.5 rounded-full text-sm mb-2">
                     Early Bird Offer
                   </div>
-                  <p className="text-gray-600 text-sm mb-1">Book before March 2025</p>
+                  <p className="text-gray-600 text-sm mb-1">Book before April 1, 2025</p>
                   <div className="text-4xl font-bold text-blue-900 mb-1">₹69,999</div>
                   <p className="text-green-600 text-sm font-semibold">Save ₹30,001</p>
                 </div>
@@ -478,6 +489,7 @@ function App() {
                     <div>✓ All Meals</div>
                     <div>✓ Training Sessions</div>
                     <div>✓ Competition Entry</div>
+                    <div>✓ AIDA UAE Membership</div>
                     <div>✓ Visa Assistance</div>
                   </div>
                 </div>
@@ -506,7 +518,7 @@ function App() {
                   <div className="inline-block bg-blue-600 text-white px-3 py-0.5 rounded-full text-sm mb-2">
                     Early Bird Offer
                   </div>
-                  <p className="text-gray-600 text-sm mb-1">Book before March 2025</p>
+                  <p className="text-gray-600 text-sm mb-1">Book before April 1, 2025</p>
                   <div className="text-4xl font-bold text-blue-900 mb-1">₹45,999</div>
                   <p className="text-green-600 text-sm font-semibold">Save ₹14,001</p>
                 </div>
